@@ -5,7 +5,7 @@ function Content() {
     <content className="content">
       <div>
         <div>
-          <img src="https://sun9-64.userapi.com/c836236/v836236980/ded1/BmN9vD2UYR0.jpg" />
+          <img src="https://sun9-64.userapi.com/c836236/v836236980/ded1/BmN9vD2UYR0.jpg" alt="#" />
         </div>
         <div>ava+dis</div>
         <div>
