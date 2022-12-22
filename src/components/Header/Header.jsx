@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className={newHeader.header}>
       <img
-        src="https://freelance.ru/img/portfolio/pics/00/34/10/3412097.jpg"
+        src="https://e7.pngegg.com/pngimages/851/133/png-clipart-www-logo-internet-computer-icons-world-wide-web-web-design-text.png"
         alt="#"
       />
     </div>
