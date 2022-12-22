@@ -1,6 +1,6 @@
 .wrapper {
-  margin: 1.5% auto;
-  max-width: 95%;
+  margin: 2% auto;
+  max-width: 90%;
   display: grid;
   grid-template-areas:
     "he he"
@@ -8,21 +8,4 @@
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
-}
-.header {
-  grid-area: he;
-  background-color: aquamarine;
-}
-
-.header img {
-  height: 35px;
-}
-
-.aside {
-  grid-area: as;
-  background-color: rgb(166, 195, 50);
-}
-.content {
-  grid-area: co;
-  background-color: rgb(255, 221, 0);
 }
