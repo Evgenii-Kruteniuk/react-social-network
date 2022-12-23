@@ -8,9 +8,9 @@ function MyPosts() {
       My post
       <div>New post</div>
       <div>
-        <Post />
-        <Post />
-        <Post />
+        <Post message="It's my first post" />
+        <Post message="It's my second post" />
+        <Post message="It's my third post" />
       </div>
     </div>
   );
