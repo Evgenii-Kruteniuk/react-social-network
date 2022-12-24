@@ -9,3 +9,8 @@
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
 }
+
+.wrapperContent {
+  grid-area: co;
+  background-color: rgb(244, 228, 4);
+}

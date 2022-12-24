@@ -1,36 +1,27 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import newAside from "./Aside.module.css";
 
-function Aside() {
+const Aside = () => {
   return (
     <aside className={newAside.nav}>
-      <div>
-        <a className={newAside.item} href="">
-          Profile
-        </a>
+      <div className={newAside.item}>
+        <a href="/profile">Profile</a>
       </div>
-      <div>
-        <a className={newAside.item} href="">
-          Messages
-        </a>
+      <div className={newAside.item}>
+        <a href="/dialogs">Messages</a>
       </div>
-      <div>
-        <a className={newAside.item} href="">
-          News
-        </a>
+      <div className={newAside.item}>
+        <a href="/news">News</a>
       </div>
-      <div>
-        <a className={newAside.item} href="">
-          Music
-        </a>
+      <div className={newAside.item}>
+        <a href="/music">Music</a>
       </div>
-      <div>
-        <a className={`${newAside.item} ${newAside.active}`} href="">
-          Settings
-        </a>
+      <div className={`${newAside.item} ${newAside.active}`}>
+        <a href="/settings">Settings</a>
       </div>
     </aside>
   );
-}
+};
 
 export default Aside;
