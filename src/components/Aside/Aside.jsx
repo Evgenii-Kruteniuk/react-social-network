@@ -1,24 +1,49 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import newAside from "./Aside.module.css";
+import s from "./Aside.module.css";
 
 const Aside = () => {
   return (
-    <aside className={newAside.nav}>
-      <div className={newAside.item}>
-        <a href="/profile">Profile</a>
+    <aside className={s.nav}>
+      <div>
+        <NavLink
+          to="/profile"
+          className={(navData) => (navData.isActive ? s.active : s.item)}
+        >
+          Profile
+        </NavLink>
       </div>
-      <div className={newAside.item}>
-        <a href="/dialogs">Messages</a>
+      <div>
+        <NavLink
+          to="/dialogs"
+          className={(navData) => (navData.isActive ? s.active : s.item)}
+        >
+          Messanges
+        </NavLink>
       </div>
-      <div className={newAside.item}>
-        <a href="/news">News</a>
+      <div>
+        <NavLink
+          to="/news"
+          className={(navData) => (navData.isActive ? s.active : s.item)}
+        >
+          News
+        </NavLink>
       </div>
-      <div className={newAside.item}>
-        <a href="/music">Music</a>
+      <div>
+        <NavLink
+          to="/music"
+          className={(navData) => (navData.isActive ? s.active : s.item)}
+        >
+          Music
+        </NavLink>
       </div>
-      <div className={`${newAside.item} ${newAside.active}`}>
-        <a href="/settings">Settings</a>
+      <div>
+        <NavLink
+          to="/settings"
+          className={(navData) => (navData.isActive ? s.active : s.item)}
+        >
+          Settings
+        </NavLink>
       </div>
     </aside>
   );
