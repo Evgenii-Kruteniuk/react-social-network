@@ -4,11 +4,10 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import s from "./Profile.module.css";
 
 const Profile = (props) => {
-  let newPosts = props.myPosts;
   return (
     <main>
       <ProfileInfo />
-      <MyPosts newPosts={newPosts} />
+      <MyPosts posts={props.posts} />
     </main>
   );
 };

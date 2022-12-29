@@ -17,7 +17,7 @@ let messages = [
   { message: "Hello world" },
 ];
 
-let firstPosts = [
+let posts = [
   { message: "It's my first post" },
   { message: "It's my second post" },
   { message: "It's my third post" },
@@ -27,8 +27,6 @@ let firstPosts = [
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App firstPosts={firstPosts} />
+    <App posts={posts} dialogs={dialogs} messages={messages} />
   </React.StrictMode>
 );
-
-export { dialogs, messages };

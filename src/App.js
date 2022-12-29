@@ -10,7 +10,6 @@ import Settings from "./components/Settings/Settings";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = (props) => {
-  let myPosts = props.firstPosts;
   return (
     <BrowserRouter>
       <div className="wrapper">
@@ -19,10 +18,15 @@ const App = (props) => {
 
         <div className="wrapperContent">
           <Routes>
-            <Route path="/" element={<Profile />} />
-            <Route path="/profile" element={<Profile myPosts={myPosts} />} />
+            <Route path="/" element={<Profile posts={props.posts} />} />
+            <Route path="/profile" element={<Profile posts={props.posts} />} />
             {/*Если совпадение в url точь в точь, то пишем /dialogs ( В React v6 теперь не нужно использовать exact, все пути по умолчанию точно должны совпадать), тогда в диалогах Евгений, Саша, Аня... не отобразятся т. к. их url будет dialogs/2. Если мы хотим, чтобы все работало даже если после dialogs было что-то написано, то ставим /* после /dialogs */}
-            <Route path="/dialogs/*" element={<Dialogs />} />
+            <Route
+              path="/dialogs/*"
+              element={
+                <Dialogs dialogs={props.dialogs} messages={props.messages} />
+              }
+            />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
