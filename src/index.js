@@ -3,13 +3,6 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 
-let posts = [
-  { message: "It's my first post" },
-  { message: "It's my second post" },
-  { message: "It's my third post" },
-  { message: "It's my fourth post" },
-];
-
 let dialogs = [
   { id: 1, name: "Evgenii" },
   { id: 2, name: "Sasha" },
@@ -24,11 +17,18 @@ let messages = [
   { message: "Hello world" },
 ];
 
+let firstPosts = [
+  { message: "It's my first post" },
+  { message: "It's my second post" },
+  { message: "It's my third post" },
+  { message: "It's my fourth post" },
+];
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <App firstPosts={firstPosts} />
   </React.StrictMode>
 );
 
-export { posts, dialogs, messages };
+export { dialogs, messages };

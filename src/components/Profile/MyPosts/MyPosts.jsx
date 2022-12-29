@@ -1,9 +1,9 @@
 import React from "react";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
-import { posts } from "../../..";
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+  let posts = props.newPosts;
   let postsElement = posts.map((p) => <Post message={p.message} />);
 
   return (
