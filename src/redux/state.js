@@ -9,11 +9,7 @@ let state = {
   },
 
   dialogsPage: {
-    messages: [
-      { message: "Hello" },
-      { message: "My name in Evgenii" },
-      { message: "Hello world" },
-    ],
+    messages: [{ message: "Hello, my name is... and I'm from Russia" }],
     dialogs: [
       { id: 1, name: "Evgenii" },
       { id: 2, name: "Sasha" },

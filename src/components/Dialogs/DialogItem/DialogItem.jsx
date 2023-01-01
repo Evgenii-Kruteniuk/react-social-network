@@ -7,13 +7,12 @@ const DialogItem = (props) => {
     <div className={s.dialog}>
       <img
         className={s.img}
+        alt="#"
         src="https://avatars.dzeninfra.ru/get-zen_doc/1899873/pub_5dcdb90634bb04739962fe7b_5dd29488e5968126aa191e1a/scale_1200"
       />
       <NavLink
         to={"/dialogs/" + props.id}
-        className={
-          ((navData) => (navData.isActive ? s.active : s.item), s.text)
-        }
+        className={(navData) => (navData.isActive ? s.active : s.item)}
       >
         {props.name}
       </NavLink>
