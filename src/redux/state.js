@@ -1,10 +1,11 @@
+import { renderIntireTree } from "../render";
 let state = {
   profilePage: {
     posts: [
-      { message: "It's my first post" },
-      { message: "It's my second post" },
-      { message: "It's my third post" },
-      { message: "It's my fourth post" },
+      { id: 1, message: "It's my first post" },
+      { id: 2, message: "It's my second post" },
+      { id: 3, message: "It's my third post" },
+      { id: 4, message: "It's my fourth post" },
     ],
   },
 
@@ -19,6 +20,15 @@ let state = {
       { id: 6, name: "Kate" },
     ],
   },
+};
+
+export let addPost = (postMessage) => {
+  let newPost = {
+    id: 5,
+    message: postMessage,
+  };
+  state.profilePage.posts.push(newPost);
+  renderIntireTree(state);
 };
 
 export default state;

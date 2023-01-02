@@ -18,11 +18,21 @@ const App = (props) => {
         <Routes>
           <Route
             path="/"
-            element={<Profile posts={props.state.profilePage.posts} />}
+            element={
+              <Profile
+                posts={props.state.profilePage.posts}
+                addPost={props.addPost}
+              />
+            }
           />
           <Route
             path="/profile"
-            element={<Profile posts={props.state.profilePage.posts} />}
+            element={
+              <Profile
+                posts={props.state.profilePage.posts}
+                addPost={props.addPost}
+              />
+            }
           />
           {/*Если совпадение в url точь в точь, то пишем /dialogs ( В React v6 теперь не нужно использовать exact, все пути по умолчанию точно должны совпадать), тогда в диалогах Евгений, Саша, Аня... не отобразятся т. к. их url будет dialogs/2. Если мы хотим, чтобы все работало даже если после dialogs было что-то написано, то ставим /* после /dialogs */}
           <Route
