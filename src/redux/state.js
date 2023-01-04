@@ -7,6 +7,7 @@ let state = {
       { id: 3, message: "It's my third post" },
       { id: 4, message: "It's my fourth post" },
     ],
+    newPostText: "Меня зовут Евгений",
   },
 
   dialogsPage: {
@@ -22,12 +23,21 @@ let state = {
   },
 };
 
-export let addPost = (postMessage) => {
+console.log(state);
+
+export let addPost = () => {
   let newPost = {
     id: 5,
-    message: postMessage,
+    message: state.profilePage.newPostText,
   };
   state.profilePage.posts.push(newPost);
+  // Очистим textarea после добавления поста
+  state.profilePage.newPostText = "";
+  renderIntireTree(state);
+};
+
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
   renderIntireTree(state);
 };
 
