@@ -1,4 +1,6 @@
-import { renderIntireTree } from "../render";
+let renderIntireTree = () => {
+  console.log("State changed");
+};
 let state = {
   profilePage: {
     posts: [
@@ -23,7 +25,7 @@ let state = {
   },
 };
 
-export let addPost = () => {
+export const addPost = () => {
   let newPost = {
     id: 5,
     message: state.profilePage.newPostText,
@@ -34,19 +36,23 @@ export let addPost = () => {
   renderIntireTree(state);
 };
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
   state.profilePage.newPostText = newText;
   renderIntireTree(state);
 };
 
-export let updateNewMessageText = (newMessage) => {
+export const updateNewMessageText = (newMessage) => {
   state.dialogsPage.newMessageText = newMessage;
   renderIntireTree(state);
 };
 
-export let clearMessage = () => {
+export const clearMessage = () => {
   state.dialogsPage.newMessageText = "";
   renderIntireTree(state);
+};
+
+export const subscribe = (observer) => {
+  renderIntireTree = observer; //Паттерн observer-перевод. как наблюдатель subscribe-подписываться
 };
 
 export default state;
