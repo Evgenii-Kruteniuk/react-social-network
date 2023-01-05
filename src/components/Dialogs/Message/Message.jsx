@@ -2,23 +2,27 @@ import React from "react";
 import s from "./Message.module.css";
 
 const Message = (props) => {
-  const newMessageElement = React.createRef();
+  let newMessageElement = React.createRef();
 
-  const addMessage = () => {
+  let addMessage = () => {
     let text = newMessageElement.current.value;
-    alert(text);
+    props.updateNewMessageText(text);
   };
+  const clearMessage = () => {
+    props.clearMessage();
+  };
+
   return (
     <div className={s.message}>
-      <textarea className={s.textarea} ref={newMessageElement}>
-        {props.message}
-      </textarea>
-
-      <button className={s.button} onClick={addMessage}>
+      <textarea
+        onChange={addMessage}
+        className={s.textarea}
+        ref={newMessageElement}
+        value={props.newMessageText}
+      />
+      <button className={s.button} onClick={clearMessage}>
         Отправить сообщение
       </button>
-
-      {/*<div className={s.message}>{props.message}</div>)*/}
     </div>
   );
 };

@@ -17,18 +17,24 @@ const App = (props) => {
       <div className="wrapperContent">
         <Routes>
           <Route
-            path="/"
+            path="/*"
             element={
               <Profile
-                profilePage={props.state.profilePage}
-                updateNewPostText={props.updateNewPostText}
+                state={props.state}
                 addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
               />
             }
           />
           <Route
-            path="/profile"
-            element={<Profile state={props.state} addPost={props.addPost} />}
+            path="/profile/*"
+            element={
+              <Profile
+                state={props.state}
+                addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
+              />
+            }
           />
           {/*Если совпадение в url точь в точь, то пишем /dialogs ( В React v6 теперь не нужно использовать exact, все пути по умолчанию точно должны совпадать), тогда в диалогах Евгений, Саша, Аня... не отобразятся т. к. их url будет dialogs/2. Если мы хотим, чтобы все работало даже если после dialogs было что-то написано, то ставим /* после /dialogs */}
           <Route
@@ -36,7 +42,9 @@ const App = (props) => {
             element={
               <Dialogs
                 dialogs={props.state.dialogsPage.dialogs}
-                messages={props.state.dialogsPage.messages}
+                dialogsPage={props.state.dialogsPage}
+                clearMessage={props.clearMessage}
+                updateNewMessageText={props.updateNewMessageText}
               />
             }
           />

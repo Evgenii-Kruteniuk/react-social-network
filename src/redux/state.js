@@ -11,7 +11,7 @@ let state = {
   },
 
   dialogsPage: {
-    messages: [{ message: "Hello, my name is... and I'm from Russia" }],
+    newMessageText: "Hello, my name is... and I'm from Russia",
     dialogs: [
       { id: 1, name: "Evgenii" },
       { id: 2, name: "Sasha" },
@@ -22,8 +22,6 @@ let state = {
     ],
   },
 };
-
-console.log(state);
 
 export let addPost = () => {
   let newPost = {
@@ -38,6 +36,16 @@ export let addPost = () => {
 
 export let updateNewPostText = (newText) => {
   state.profilePage.newPostText = newText;
+  renderIntireTree(state);
+};
+
+export let updateNewMessageText = (newMessage) => {
+  state.dialogsPage.newMessageText = newMessage;
+  renderIntireTree(state);
+};
+
+export let clearMessage = () => {
+  state.dialogsPage.newMessageText = "";
   renderIntireTree(state);
 };
 

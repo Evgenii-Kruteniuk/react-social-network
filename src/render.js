@@ -3,7 +3,12 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import { addPost, updateNewPostText } from "./redux/state";
+import {
+  addPost,
+  updateNewPostText,
+  clearMessage,
+  updateNewMessageText,
+} from "./redux/state";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 export let renderIntireTree = (state) => {
@@ -13,7 +18,9 @@ export let renderIntireTree = (state) => {
         <App
           state={state}
           updateNewPostText={updateNewPostText}
+          updateNewMessageText={updateNewMessageText}
           addPost={addPost}
+          clearMessage={clearMessage}
         />
       </BrowserRouter>
     </React.StrictMode>
